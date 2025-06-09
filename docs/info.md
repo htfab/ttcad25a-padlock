@@ -1,20 +1,18 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+- Stores a 7-bit secret code using flip-flops. Another flip-flop stores whether the safe is open.
+- Unlocks the safe when the input (bits 0-6) matches the stored secret code. Locks the safe when RESET is pressed.
+- Updates the secret code when input bit 7 is high.
+- The 7-segment display shows "L" if the safe is locked and "U" if unlocked.
 
 ## How to test
 
-Explain how to use your project
+- Set the clock to free-running mode, e.g. at 10 kHz.
+- Set the desired secret code using pins 0-6. Toggle pin 7 ON, then OFF.
+- Change the inputs 0-6 to prevent the safe from automatically unlocking.
+- Press RESET to lock the safe. The display should show "L" (for locked).
+- Change the inputs 0-6 to try opening the safe. It should only show "U" (for unlocked) once the secret code is entered. Then it should stay unlocked until the next RESET.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+None
